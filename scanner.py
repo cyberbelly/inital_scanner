@@ -14,16 +14,20 @@ def nmap_scan(command):
 ip_list = []
 for ip in raw_ips:
     ip = ip.split('.')
-    for index,octa in enumerate(ip):
-        if '-' in octa:
-            first,last = octa.split('-')
-            for new_octa in range(int(first),int(last)+1):
-                target = ip[:index] + [str(new_octa)] + ip[index+1:]
-                ip_list.append('.'.join(target))
-        elif ',' in octa:
-            for new_octa in octa.split(','):
-                target = ip[:index] + [str(new_octa)] + ip[index+1:]
-                ip_list.append('.'.join(target))
+    for index,octals in enumerate(ip):
+        if '-' not in octals or ',' not in octals:
+            pass
+        else:
+            octals = octals.split(',')
+            for octal in octals:
+                if '-' in octal:
+                    first, last = octal.split('-')
+                    for new_octal in range(int(first),int(last)+1):
+                        target = ip[:index] + [str(new_octal)] + ip[index+1:]
+                        ip_list.append('.'.join(target))
+                else: 
+                    target = ip[:index] + [str(octa)] + ip[index+1:]
+                    ip_list.append('.'.join(target))
 
 print('scanning against the following IPs: ', *ip_list )
 
