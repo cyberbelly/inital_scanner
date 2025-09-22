@@ -15,7 +15,7 @@ ip_list = []
 for ip in raw_ips:
     ip = ip.split('.')
     for index,octals in enumerate(ip):
-        if '-' not in octals or ',' not in octals:
+        if '-' in octals or ',' in octals:
             octals = octals.split(',')
             for octal in octals:
                 if '-' in octal:
