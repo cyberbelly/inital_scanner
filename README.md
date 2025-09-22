@@ -1,9 +1,5 @@
 A simple Python script that organizes and parallelizes Nmap scans for my OSCP and OSEP journey.
 
-example
-```console
-kali@kali:~$ sudo scanner.py 192.168.1.28-30,35 
-```
 <img width="1187" height="373" alt="image" src="https://github.com/user-attachments/assets/61acd1dd-f760-4c6e-a9d1-3b0c2f87a569" />
 
 the scanner understand '-' as being a range operator and ',' as additional host.
