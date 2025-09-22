@@ -24,7 +24,7 @@ for ip in raw_ips:
                         target = ip[:index] + [str(new_octal)] + ip[index+1:]
                         ip_list.append('.'.join(target))
                 else: 
-                    target = ip[:index] + [str(octa)] + ip[index+1:]
+                    target = ip[:index] + [str(octal)] + ip[index+1:]
                     ip_list.append('.'.join(target))
 
 print('scanning against the following IPs: ', *ip_list )
