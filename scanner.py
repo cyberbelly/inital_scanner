@@ -3,7 +3,7 @@ import os
 import sys
 import threading
 
-tcp_scan_template = 'nmap -p- -Pn -n -A -sTVC -oN {} {}'
+tcp_scan_template = 'nmap -p- -Pn -n -sTVC -oN {} {}'
 udp_scan_template = 'nmap -Pn -n -sUVC -oN {} {}'
 raw_ips = sys.argv[1::]
 
